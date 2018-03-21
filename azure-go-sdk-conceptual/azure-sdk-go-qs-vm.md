@@ -8,11 +8,11 @@ ms.date: 02/08/2018
 ms.topic: quickstart
 ms.devlang: go
 manager: routlaw
-ms.openlocfilehash: e530d944deca40e9e6c29b6c2768e2367822714e
-ms.sourcegitcommit: aaa8c37880332625f858a38f5918e6cf581bf48d
+ms.openlocfilehash: ae460dbf21b13c40f3d564274f8b790afe005aae
+ms.sourcegitcommit: af3473779cd7c2978f290fbdc51ee15eb1130840
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="quickstart-deploy-an-azure-virtual-machine-from-a-template-with-the-azure-sdk-for-go"></a>Démarrage rapide : déployer une machine virtuelle à partir d’un modèle avec le kit de développement logiciel Microsoft Azure SDK pour Go
 
@@ -32,7 +32,7 @@ Si vous utilisez une installation locale de l’interface de ligne de commande A
 
 ## <a name="create-a-service-principal"></a>Créer un principal du service
 
-Pour vous connecter en mode non interactif à une application, vous avez besoin d’un principal de service. Les principaux de service font partie de l’authentification basée sur le rôle (RBAC), qui crée une identité d’utilisateur unique. Pour créer un principal de service avec l’interface CLI, exécutez la commande suivante :
+Pour vous connecter en mode non interactif à une application, vous avez besoin d’un principal de service. Les principaux de service font partie du contrôle d’accès basé sur le rôle (RBAC), qui crée une identité d’utilisateur unique. Pour créer un principal de service avec l’interface CLI, exécutez la commande suivante :
 
 ```azurecli-interactive
 az ad sp create-for-rbac --name az-go-vm-quickstart
@@ -79,7 +79,7 @@ Vous devez également modifier une valeur dans le fichier `vm-quickstart-params.
     }
 ```
 
-* `vm_password` : le mot de passe du compte d’utilisateur de la machine virtuelle. Il doit comporter 6 à 72 caractères et contenir 3 des caractères suivants :
+* `vm_password` : le mot de passe du compte d’utilisateur de la machine virtuelle. Il doit comporter 12 à 72 caractères et contenir 3 des caractères suivants :
   * une lettre minuscule
   * une lettre majuscule
   * un chiffre
@@ -333,7 +333,7 @@ Cette méthode s’appuie sur les informations stockées dans le fichier de para
 
 Les valeurs et le mot de passe pour l’utilisateur de la machine virtuelle sont également chargées à partir de JSON.
 
-## <a name="next-steps"></a>étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes
 
 Dans ce guide de démarrage rapide, vous avez pris un modèle existant et l’avez déployé via Go. Puis vous l’avez connecté à la machine virtuelle nouvellement créée via le protocole SSH pour vous assurer qu’il s’exécute.
 
