@@ -1,18 +1,17 @@
 ---
-title: "Installation du kit de développement logiciel Microsoft Azure SDK pour Go"
-description: "Installation, fournisseur et configuration du kit de développement logiciel (SDK) Azure pour Go."
-keywords: "Azure, SDK, Go, Golang, Kit de développement logiciel (SDK) Azure"
+title: Installation du kit de développement logiciel Microsoft Azure SDK pour Go
+description: Installation, fournisseur et configuration du kit de développement logiciel (SDK) Azure pour Go.
 author: sptramer
 ms.author: sttramer
 ms.date: 01/30/2018
 ms.topic: article
 ms.devlang: go
-manager: routlaw
-ms.openlocfilehash: 7fc0a3ff71b0b06f616ae43cff311352fe873345
-ms.sourcegitcommit: 890f5f01a70e7e376e6bb98a2030afbfc016f538
+manager: carmonm
+ms.openlocfilehash: 580daf4f2e91eabf97e3acd21bda183c559b57da
+ms.sourcegitcommit: fcc1786d59d2e32c97a9a8e0748e06f564a961bd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/01/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="installing-the-azure-sdk-for-go"></a>Installation du kit de développement logiciel Microsoft Azure SDK pour Go
 
@@ -43,7 +42,7 @@ version = "14.0.0"
 Pour utiliser les Services Azure à partir de votre code Go, importer tous les services avec lesquels vous interagissez et les modules `autorest` requis.
 Vous obtenez une liste complète des modules disponibles à partir de GoDoc pour les [services disponibles](https://godoc.org/github.com/Azure/azure-sdk-for-go) et les [packages AutoRest](https://godoc.org/github.com/Azure/go-autorest). Les packages courants que vous devez obtenir de `go-autorest` sont :
 
-| Package | DESCRIPTION |
+| Package | Description |
 |---------|-------------|
 | [github.com/Azure/go-autorest/autorest][autorest] | Objets pour la gestion de l’authentification client du service |
 | [github.com/Azure/go-autorest/autorest/azure][autorest/azure] | Constantes pour les interactions avec les Services Azure |
@@ -72,7 +71,7 @@ import "github.com/Azure/azure-sdk-for-go/profiles/2017-03-09/resources/mgmt/res
 > [!WARNING]
 > Les profils `preview` et `latest` sont également disponibles. Leur utilisation n’est pas recommandée. Ces profils sont des versions continues et le comportement du service peut changer à tout moment.
 
-## <a name="next-steps"></a>étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes
 
 Pour commencer à utiliser le kit de développement logiciel Microsoft Azure SDK pour Go, essayez un démarrage rapide.
 
