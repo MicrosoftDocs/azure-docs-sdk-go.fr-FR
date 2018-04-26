@@ -1,21 +1,21 @@
 ---
-title: Installation du kit de développement logiciel Microsoft Azure SDK pour Go
+title: Installer le kit de développement logiciel Microsoft Azure SDK pour Go
 description: Installation, fournisseur et configuration du kit de développement logiciel (SDK) Azure pour Go.
 author: sptramer
 ms.author: sttramer
-ms.date: 01/30/2018
+ms.date: 03/14/2018
 ms.topic: article
 ms.devlang: go
 manager: carmonm
-ms.openlocfilehash: 580daf4f2e91eabf97e3acd21bda183c559b57da
-ms.sourcegitcommit: fcc1786d59d2e32c97a9a8e0748e06f564a961bd
+ms.openlocfilehash: a6a92e080aea1a92f47a9d7083f133ca05a47541
+ms.sourcegitcommit: 26520a8c6e812facb5b9432d68c370fa23c99888
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="installing-the-azure-sdk-for-go"></a>Installation du kit de développement logiciel Microsoft Azure SDK pour Go
+# <a name="install-the-azure-sdk-for-go"></a>Installer le kit de développement logiciel Microsoft Azure SDK pour Go
 
-Bienvenue dans le kit de développement logiciel Microsoft Azure SDK pour Go ! Ce kit de développement logiciel (SDK) vous permet de gérer et d’interagir avec les services Azure à partir de vos applications Go.
+Bienvenue dans le kit de développement logiciel Microsoft Azure SDK pour Go ! Le kit de développement logiciel (SDK) vous permet de gérer et d’interagir avec les services Azure à partir de vos applications Go.
 
 ## <a name="get-the-azure-sdk-for-go"></a>Obtenir le kit de développement logiciel Microsoft Azure SDK pour Go
 
@@ -27,7 +27,7 @@ L’utilisation des objets blobs de Stockage Azure nécessite un kit de dévelop
 go get -u -d github.com/Azure/azure-storage-blob-go/...
 ```
 
-## <a name="vendoring-the-azure-sdk-for-go"></a>Fournir le kit de développement logiciel Microsoft Azure SDK pour Go
+## <a name="vendor-the-azure-sdk-for-go"></a>Fournir le kit de développement logiciel (SDK) Azure pour Go
 
 Le kit de développement logiciel Microsoft Azure SDK pour Go peut être fourni via [dep](https://github.com/golang/dep). Pour des raisons de stabilité, le vendoring est recommandé. Pour pouvoir utiliser la prise en charge `dep`, ajoutez `github.com/Azure/azure-sdk-for-go` à une section `[[constraint]]` de votre `Gopkg.toml`. Par exemple, pour fournir la version `14.0.0`, ajoutez l’entrée suivante :
 
@@ -37,7 +37,7 @@ name = "github.com/Azure/azure-sdk-for-go"
 version = "14.0.0"
 ```
 
-## <a name="including-the-azure-sdk-for-go-in-your-project"></a>Inclure le kit de développement logiciel Microsoft Azure SDK pour Go dans votre projet
+## <a name="include-the-azure-sdk-for-go-in-your-project"></a>Inclure le kit de développement logiciel (SDK) Azure pour Go dans votre projet
 
 Pour utiliser les Services Azure à partir de votre code Go, importer tous les services avec lesquels vous interagissez et les modules `autorest` requis.
 Vous obtenez une liste complète des modules disponibles à partir de GoDoc pour les [services disponibles](https://godoc.org/github.com/Azure/azure-sdk-for-go) et les [packages AutoRest](https://godoc.org/github.com/Azure/go-autorest). Les packages courants que vous devez obtenir de `go-autorest` sont :
