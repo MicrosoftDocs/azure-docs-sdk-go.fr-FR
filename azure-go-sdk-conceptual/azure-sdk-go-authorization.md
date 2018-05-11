@@ -4,16 +4,19 @@ description: En savoir plus sur les méthodes d’authentification disponibles d
 services: azure
 author: sptramer
 ms.author: sttramer
-ms.date: 04/03/2018
-ms.topic: article
-ms.service: azure
-ms.devlang: go
 manager: carmonm
-ms.openlocfilehash: 39f9dc5a7cdf9ab84cfd9264446bacb31392ca80
-ms.sourcegitcommit: 59d2b4c9d8da15fbbd15e36551093219fdaf256e
+ms.date: 04/03/2018
+ms.topic: conceptual
+ms.prod: azure
+ms.technology: azure-sdk-go
+ms.devlang: go
+ms.service: active-directory
+ms.component: authentication
+ms.openlocfilehash: 370f5607b89c0044022f7987d06c3a55c9d6f352
+ms.sourcegitcommit: f08abf902b48f8173aa6e261084ff2cfc9043305
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="authentication-methods-in-the-azure-sdk-for-go"></a>Méthodes d’authentification dans le Kit de développement logiciel (SDK) Azure pour Go
 
@@ -84,6 +87,27 @@ Lorsque vous utilisez l’authentification basée sur l’environnement, appelez
 import "github.com/Azure/go-autorest/autorest/azure/auth"
 authorizer, err := auth.NewAuthorizerFromEnvironment()
 ```
+
+### <a name="authentication-on-azure-stack"></a>Authentification sur Azure Stack
+
+Pour s’authentifier sur Azure Stack, vous devez définir les variables suivantes :
+
+| Variable d’environnement | Description  |
+|----------------------|--------------|
+| `AZURE_AD_ENDPOINT` | Le point de terminaison Active Directory. |
+| `AZURE_AD_RESOURCE` | L’ID de ressource Active Directory. |
+
+Ces variables peuvent être récupérés à partir des informations de métadonnées Azure Stack. Pour récupérer les métadonnées, ouvrez un navigateur web dans votre environnement Azure Stack et utilisez l’url : `(ResourceManagerURL)/metadata/endpoints?api-version=1.0`
+
+L’`ResourceManagerURL` dépend du nom de la région, du nom de la machine ainsi que du nom de domaine complet (FQDN) externe de votre déploiement Azure Stack :
+
+| Environnement | ResourceManagerURL |
+|----------------------|--------------|
+| Kit de développement | `https://management.local.azurestack.external/` |
+| Systèmes intégrés | `https://management.(region).ext-(machine-name).(FQDN)` |
+
+Pour plus d’informations sur l’utilisation du Kit de développement logiciel Microsoft Azure SDK pour Go sur Azure Stack, consultez [Utilisez des profils de version des API avec Go dans Azure Stack](https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-version-profiles-go)
+
 
 ## <a name="use-file-based-authentication"></a>Utiliser l’authentification basée sur un fichier
 
