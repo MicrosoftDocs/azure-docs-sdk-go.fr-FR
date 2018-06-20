@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-sdk-go
 ms.devlang: go
-ms.openlocfilehash: 8423b3fedd89e57662bf96f777a5b30926914da9
-ms.sourcegitcommit: b81b17cbb934399c195bfdcb87137aee935f5234
+ms.openlocfilehash: 3388359bba791c87025b6ffd0e6b476f95589f73
+ms.sourcegitcommit: 81e97407e6139375bf7357045e818c87a17dcde1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34755513"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36262974"
 ---
 # <a name="install-the-azure-sdk-for-go"></a>Installer le kit de développement logiciel Microsoft Azure SDK pour Go
 
@@ -30,7 +30,9 @@ Certains services Azure ont leurs propres Kitw de développement logiciel (SDK) 
 |---------|---------|
 | Stockage Blob | [github.com/Azure/azure-storage-blob-go](https://github.com/Azure/azure-storage-blob-go) |
 | Stockage Fichier | [github.com/Azure/azure-storage-file-go](https://github.com/Azure/azure-storage-file-go) |
+| File d’attente de stockage | [github.com/Azure/azure-storage-queue-go](https://github.com/Azure/azure-storage-queue-go) |
 | Event Hub | [github.com/Azure/azure-event-hubs-go](https://github.com/Azure/azure-event-hubs-go) |
+| Service Bus | [github.com/Azure/azure-service-bus-go](https://github.com/Azure/azure-service-bus-go) |
 | Application Insights | [github.com/Microsoft/ApplicationInsights-go](https://github.com/Microsoft/ApplicationInsights-go) |
 
 ## <a name="vendor-the-azure-sdk-for-go"></a>Fournir le kit de développement logiciel (SDK) Azure pour Go
@@ -68,7 +70,7 @@ import "github.com/Azure/azure-sdk-for-go/services/compute/mgmt/2017-03-30/compu
 
 Actuellement, il est recommandé d’utiliser la version la plus récente d’un service, à moins que vous n’ayez une raison de faire autrement.
 
-Si vous avez besoin d’un instantané collectif des services, vous pouvez également sélectionner une version de profil unique. Actuellement, le seul profil verrouillé est la version `2017-03-09`, qui ne dispose peut-être pas des fonctionnalités les plus récentes des services. Les profils sont situés sous le module `profiles`, avec leur version au format `YYYY-MM-DD`. Les services sont regroupés sous leur version de profil. Par exemple, pour importer le module de Gestion des ressources Azure à partir du profil `2017-03-09` :
+Si vous avez besoin d’un instantané collectif des services, vous pouvez également sélectionner une version de profil unique. Actuellement, le seul profil verrouillé est la version `2017-03-09`, qui ne dispose peut-être pas des fonctionnalités les plus récentes des services. Les profils sont situés sous le module `profiles`, avec leur version au format `YYYY-MM-DD`. Les services sont regroupées sous leur version de profil. Par exemple, pour importer le module de Gestion des ressources Azure à partir du profil `2017-03-09` :
 
 ```go
 import "github.com/Azure/azure-sdk-for-go/profiles/2017-03-09/resources/mgmt/resources"
