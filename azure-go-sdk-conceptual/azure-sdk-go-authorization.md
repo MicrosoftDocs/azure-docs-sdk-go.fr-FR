@@ -12,12 +12,12 @@ ms.technology: azure-sdk-go
 ms.devlang: go
 ms.service: active-directory
 ms.component: authentication
-ms.openlocfilehash: 370f5607b89c0044022f7987d06c3a55c9d6f352
-ms.sourcegitcommit: f08abf902b48f8173aa6e261084ff2cfc9043305
+ms.openlocfilehash: c7970167070bdf1f3fc75692f3e34268801c65df
+ms.sourcegitcommit: 181d4e0b164cf39b3feac346f559596bd19c94db
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32319881"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38066997"
 ---
 # <a name="authentication-methods-in-the-azure-sdk-for-go"></a>Méthodes d’authentification dans le Kit de développement logiciel (SDK) Azure pour Go
 
@@ -30,7 +30,7 @@ Le Kit de développement logiciel (SDK) Azure pour Go offre différents types d�
 | Type d'authentification | Recommandé lorsque... |
 |---------------------|---------------------|
 | Authentification par certificat | Vous avez un certificat X509 qui a été configuré pour un utilisateur ou un principal de service Azure Active Directory (AAD). Pour en savoir plus, consultez [Bien démarrer avec l’authentification par certificat dans Azure Active Directory]. |
-| Informations d'identification du client | Vous avez un principal de service configuré pour cette application ou pour la classe d’applications à laquelle elle appartient. Pour en savoir plus, consultez [Créer un principal du service avec Azure CLI 2.0]. |
+| Informations d'identification du client | Vous avez un principal de service configuré pour cette application ou pour la classe d’applications à laquelle elle appartient. Pour en savoir plus, consultez [Créer un principal de service avec l’interface de ligne de commande Azure 2.0]. |
 | Identité du service administré (MSI) | Votre application s’exécute sur une ressource Azure qui a été configurée avec Identité du service administré (MSI). Pour en savoir plus, consultez [Identité du service administré (MSI) pour les ressources Azure]. |
 | Jeton d’appareil | Votre application doit être utilisée de manière interactive __uniquement__ et aura une multitude d’utilisateurs, potentiellement à partir de plusieurs locataires Azure Active Directory (AAD). Les utilisateurs ont accès à un navigateur web pour se connecter. Pour plus d’informations, consultez [Utilisation de l’authentification par jeton d’appareil](#use-device-token-authentication).|
 | Nom d’utilisateur/mot de passe | Vous avez une application interactive qui ne peut pas utiliser une autre méthode d’authentification. L’authentification multifacteur n’est pas activée pour la connexion AAD de vos utilisateurs. |
@@ -42,7 +42,7 @@ Le Kit de développement logiciel (SDK) Azure pour Go offre différents types d�
 > Évitez l’authentification par nom d’utilisateur/mot de passe, à moins que vous n’ayez des exigences particulières. Dans les situations où la connexion basée sur l’utilisateur est nécessaire, l’authentification par jeton d’appareil peut en général être utilisée à la place.
 
 [Bien démarrer avec l’authentification par certificat dans Azure Active Directory]: /azure/active-directory/active-directory-certificate-based-authentication-get-started
-[Créer un principal du service avec Azure CLI 2.0]: /cli/azure/create-an-azure-service-principal-azure-cli
+[Créer un principal de service avec l’interface de ligne de commande Azure 2.0]: /cli/azure/create-an-azure-service-principal-azure-cli
 [Identité du service administré (MSI) pour les ressources Azure]: /azure/active-directory/managed-service-identity/overview
 
 Ces types d’authentification sont disponibles par le biais de différentes méthodes. [_L’authentification basée sur l’environnement_](#use-environment-based-authentication) lit les informations d’identification directement à partir de l’environnement du programme. [_L’authentification basée sur un fichier_](#use-file-based-authentication) charge un fichier contenant les informations d’identification du principal de service. [_L’authentification basée sur le client_](#use-an-authentication-client) utilise un objet dans le code Go et vous charge de fournir les informations d’identification lors de l’exécution du programme. Enfin, [_l’authentification par jeton d’appareil_](#use-device-token-authentication) oblige les utilisateurs à se connecter de manière interactive via un navigateur web avec un jeton, et ne peut pas être utilisée avec l’authentification basée sur l’environnement ou sur un fichier.
@@ -107,7 +107,7 @@ L’`ResourceManagerURL` dépend du nom de la région, du nom de la machine ains
 | Kit de développement | `https://management.local.azurestack.external/` |
 | Systèmes intégrés | `https://management.(region).ext-(machine-name).(FQDN)` |
 
-Pour plus d’informations sur l’utilisation du Kit de développement logiciel Microsoft Azure SDK pour Go sur Azure Stack, consultez [Utilisez des profils de version des API avec Go dans Azure Stack](https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-version-profiles-go)
+Pour plus d’informations sur l’utilisation du Kit de développement logiciel Microsoft Azure SDK pour Go sur Azure Stack, consultez [Utilisez des profils de version des API avec Go dans Azure Stack](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-version-profiles-go)
 
 
 ## <a name="use-file-based-authentication"></a>Utiliser l’authentification basée sur un fichier
@@ -127,11 +127,11 @@ import "github.com/Azure/go-autorest/autorest/azure/auth"
 authorizer, err := NewAuthorizerFromFile(azure.PublicCloud.ResourceManagerEndpoint)
 ```
 
-Pour plus d’informations sur l’utilisation des principaux de service et la gestion de leurs autorisations d’accès, consultez [Créer un principal du service avec Azure CLI 2.0].
+Pour plus d’informations sur l’utilisation des principaux de service et la gestion de leurs autorisations d’accès, consultez [Créer un principal de service avec l’interface de ligne de commande Azure 2.0].
 
 ## <a name="use-device-token-authentication"></a>Utiliser l’authentification par jeton d’appareil
 
-Si vous souhaitez que les utilisateurs se connectent de manière interactive, l’authentification par jeton d’appareil est la meilleure manière d’offrir cette possibilité. Ce flux d’authentification passe à l’utilisateur un jeton à coller dans un site de connexion Microsoft, sur lequel il peut ensuite se connecter avec un compte Azure Active Directory (AAD). Cette méthode d’authentification prend en charge les comptes pour lesquels l’authentification multifacteur est activée, contrairement à l’authentification par nom d’utilisateur/mot de passe standard.
+Si vous souhaitez que les utilisateurs se connectent de manière interactive, l’authentification par jeton d’appareil est la meilleure manière d’offrir cette possibilité. Ce flux d’authentification passe à l’utilisateur un jeton à coller dans un site de connexion Microsoft, sur lequel il peut ensuite s’authentifier avec un compte Azure Active Directory (AAD). Cette méthode d’authentification prend en charge les comptes pour lesquels l’authentification multifacteur est activée, contrairement à l’authentification par nom d’utilisateur/mot de passe standard.
 
 Pour utiliser l’authentification par jeton d’appareil, vous devez créer un agent d’autorisation [DeviceFlowConfig](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#DeviceFlowConfig) avec la fonction [NewDeviceFlowConfig](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#NewDeviceFlowConfig). Appelez l’[Agent d’autorisation](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#DeviceFlowConfig.Authorizer) sur l’objet résultant pour démarrer le processus d’authentification. L’authentification par flux d’appareil bloque l’exécution du programme jusqu’à ce que le flux d’authentification soit entièrement terminé.
 
