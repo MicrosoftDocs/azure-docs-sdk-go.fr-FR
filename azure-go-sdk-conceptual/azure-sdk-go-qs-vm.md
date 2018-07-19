@@ -1,21 +1,21 @@
 ---
 title: Déployer une machine virtuelle Azure à partir de Go
-description: Déployer une machine virtuelle à l’aide du kit de développement logiciel Microsoft Azure SDK pour Go.
+description: Déployez une machine virtuelle à l’aide du kit de développement logiciel Azure SDK pour Go.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 04/03/2018
+ms.date: 07/13/2018
 ms.topic: quickstart
 ms.prod: azure
 ms.technology: azure-sdk-go
 ms.service: virtual-machines
 ms.devlang: go
-ms.openlocfilehash: 7592e8617436a76dd27cac5269971051982425bf
-ms.sourcegitcommit: 181d4e0b164cf39b3feac346f559596bd19c94db
+ms.openlocfilehash: 6b1de35748fb7694d45715fa7f028d5730530d2e
+ms.sourcegitcommit: d1790b317a8fcb4d672c654dac2a925a976589d4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38067014"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39039554"
 ---
 # <a name="quickstart-deploy-an-azure-virtual-machine-from-a-template-with-the-azure-sdk-for-go"></a>Démarrage rapide : déployer une machine virtuelle à partir d’un modèle avec le kit de développement logiciel Microsoft Azure SDK pour Go
 
@@ -27,9 +27,9 @@ Ce démarrage rapide porte sur le déploiement de ressources à partir d’un mo
 
 [!INCLUDE [cloud-shell-try-it.md](includes/cloud-shell-try-it.md)]
 
-Si vous utilisez une installation locale de l’interface de ligne de commande Azure, ce démarrage rapide requiert la version d’interface CLI __2.0.28__ ou une version ultérieure. Exécutez `az --version` pour vous assurer que votre installation d’interface de ligne de commande répond à cette exigence. Si vous devez installer ou mettre à niveau, consultez [Installation d’Azure CLI 2.0](/cli/azure/install-azure-cli).
+Si vous utilisez une installation locale de l’interface de ligne de commande Azure, ce démarrage rapide requiert la version d’interface CLI __2.0.28__ ou une version ultérieure. Exécutez `az --version` pour vous assurer que votre installation d’interface de ligne de commande répond à cette exigence. Si vous devez effectuer une installation ou une mise à niveau, consultez [Installer Azure CLI 2.0](/cli/azure/install-azure-cli).
 
-## <a name="install-the-azure-sdk-for-go"></a>Installer le kit de développement logiciel Microsoft Azure SDK pour Go 
+## <a name="install-the-azure-sdk-for-go"></a>Installer le kit de développement logiciel Microsoft Azure SDK pour Go
 
 [!INCLUDE [azure-sdk-go-get](includes/azure-sdk-go-get.md)]
 
@@ -242,7 +242,9 @@ Les fichiers de déploiement sont chargés par `readJSON`, dont détails sont ig
     }
 ```
 
-Ce code suit le même modèle que pour la création du groupe de ressources. Un nouveau client est créé, la possibilité de s’authentifier avec Azure lui est donnée, puis une méthode est appelée. La méthode a le même nom (`CreateOrUpdate`) que la méthode correspondante pour les groupes de ressources. Ce modèle est visible dans le Kit de développement logiciel (SDK). Les méthodes qui effectuent un travail similaire portent généralement le même nom.
+Ce code suit le même modèle que pour la création du groupe de ressources. Un nouveau client est créé, la possibilité de s’authentifier avec Azure lui est donnée, puis une méthode est appelée.
+La méthode a le même nom (`CreateOrUpdate`) que la méthode correspondante pour les groupes de ressources. Ce modèle est visible dans le Kit de développement logiciel (SDK).
+Les méthodes qui effectuent un travail similaire portent généralement le même nom.
 
 La différence principale réside dans la valeur de retour de la méthode `deploymentsClient.CreateOrUpdate`. Cette valeur est du type [Perspective](https://godoc.org/github.com/Azure/go-autorest/autorest/azure#Future), qui suit le [modèle de conception de perspective](https://en.wikipedia.org/wiki/Futures_and_promises). Les perspectives représentent une opération longue dans Azure que vous pouvez interroger, annuler ou bloquer dès leur achèvement.
 

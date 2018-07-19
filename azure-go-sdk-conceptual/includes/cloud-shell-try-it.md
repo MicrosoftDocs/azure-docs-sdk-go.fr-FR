@@ -6,11 +6,12 @@ ms.date: 02/12/2018
 ms.topic: include
 ms.prod: azure
 ms.technology: azure-cli
-ms.openlocfilehash: 78d48eff1dd268b249633d4de7d1a15ac1e69750
-ms.sourcegitcommit: f08abf902b48f8173aa6e261084ff2cfc9043305
+ms.openlocfilehash: fcbdadcd1d038f93ee609d5067dc2f7451e4badc
+ms.sourcegitcommit: 2a3bd491e087a1d0e7d269bed896c029357d62a6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38988059"
 ---
 ## <a name="launch-azure-cloud-shell"></a>Lancement d’Azure Cloud Shell
 
@@ -20,6 +21,5 @@ Azure Cloud Shell est un interpréteur de commandes interactif et gratuit que vo
 |-----------------------------------------------|---|
 | Cliquez sur **Essayer** dans le coin supérieur droit d’un bloc de code. | ![Cloud Shell dans cet article](../media/cloud-shell-try-it/cli-try-it.png) |
 | Ouvrez Cloud Shell dans votre navigateur. | [![https://shell.azure.com/bash](../media/cloud-shell-try-it/launchcloudshell.png)](https://shell.azure.com/bash) |
-| Cliquez sur le bouton **Cloud Shell** du menu situé dans l’angle supérieur droit de la fenêtre du [portail Azure](https://portal.azure.com). |    ![Cloud Shell dans le portail](../media/cloud-shell-try-it/cloud-shell-menu.png) |
+| Cliquez sur le bouton **Cloud Shell** du menu situé dans l’angle supérieur droit de la fenêtre du [portail Azure](https://portal.azure.com). | ![Cloud Shell dans le portail](../media/cloud-shell-try-it/cloud-shell-menu.png) |
 |  |  |
-

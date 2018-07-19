@@ -12,12 +12,12 @@ ms.technology: azure-sdk-go
 ms.devlang: go
 ms.service: active-directory
 ms.component: authentication
-ms.openlocfilehash: c7970167070bdf1f3fc75692f3e34268801c65df
-ms.sourcegitcommit: 181d4e0b164cf39b3feac346f559596bd19c94db
+ms.openlocfilehash: f5e76fc745512a3a52172f560c3a24f510e96feb
+ms.sourcegitcommit: d1790b317a8fcb4d672c654dac2a925a976589d4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38066997"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39039537"
 ---
 # <a name="authentication-methods-in-the-azure-sdk-for-go"></a>Méthodes d’authentification dans le Kit de développement logiciel (SDK) Azure pour Go
 
@@ -37,7 +37,7 @@ Le Kit de développement logiciel (SDK) Azure pour Go offre différents types d�
 
 > [!IMPORTANT]
 > Si vous utilisez un type d’authentification autre que les informations d’identification du client, votre application doit être inscrite dans Azure Active Directory. Pour en savoir plus, consultez [Intégration d’applications dans Azure Active Directory](/azure/active-directory/develop/active-directory-integrating-applications).
-
+>
 > [!NOTE]
 > Évitez l’authentification par nom d’utilisateur/mot de passe, à moins que vous n’ayez des exigences particulières. Dans les situations où la connexion basée sur l’utilisateur est nécessaire, l’authentification par jeton d’appareil peut en général être utilisée à la place.
 
@@ -54,7 +54,7 @@ Tous les types et fonctions d’authentification sont disponibles dans le packag
 
 ## <a name="use-environment-based-authentication"></a>Utiliser l’authentification basée sur l’environnement
 
-Si vous exécutez votre application dans un environnement étroitement contrôlé, tel qu’un conteneur, l’authentification basée sur l’environnement est un choix naturel. Vous configurez l’environnement de l’interpréteur de commandes avant d’exécuter votre application et le Kit de développement logiciel (SDK) Go lit ces variables d’environnement lors de l’exécution pour s’authentifier avec Azure. 
+Si vous exécutez votre application dans un environnement étroitement contrôlé, tel qu’un conteneur, l’authentification basée sur l’environnement est un choix naturel. Vous configurez l’environnement de l’interpréteur de commandes avant d’exécuter votre application et le Kit de développement logiciel (SDK) Go lit ces variables d’environnement lors de l’exécution pour s’authentifier avec Azure.
 
 L’authentification basée sur l’environnement prend en charge toutes les méthodes d’authentification, à l’exception des jetons d’appareil, évaluées dans l’ordre suivant : informations d’identification du client, certificats, nom d’utilisateur/mot de passe et Identité de service administré (MSI). Si une variable d’environnement requise n’est pas définie, ou si le Kit de développement logiciel (SDK) obtient un refus de la part du service d’authentification, le type d’authentification suivant est tenté. Si le Kit de développement logiciel (SDK) ne peut pas s’authentifier à partir de l’environnement, il retourne une erreur.
 
@@ -108,7 +108,6 @@ L’`ResourceManagerURL` dépend du nom de la région, du nom de la machine ains
 | Systèmes intégrés | `https://management.(region).ext-(machine-name).(FQDN)` |
 
 Pour plus d’informations sur l’utilisation du Kit de développement logiciel Microsoft Azure SDK pour Go sur Azure Stack, consultez [Utilisez des profils de version des API avec Go dans Azure Stack](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-version-profiles-go)
-
 
 ## <a name="use-file-based-authentication"></a>Utiliser l’authentification basée sur un fichier
 

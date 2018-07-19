@@ -10,16 +10,16 @@ ms.prod: azure
 ms.technology: azure-sdk-go
 ms.service: active-directory
 ms.devlang: go
-ms.openlocfilehash: 2a412d8604aa02d568044c8c250333de49f4ce0a
-ms.sourcegitcommit: f08abf902b48f8173aa6e261084ff2cfc9043305
+ms.openlocfilehash: 278ee81e180287abf3152779821b7dfb76a487e3
+ms.sourcegitcommit: 2a3bd491e087a1d0e7d269bed896c029357d62a6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32319847"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38988005"
 ---
 # <a name="azure-sdk-for-go-samples-for-authentication-and-aad"></a>Exemples de kit de développement logiciel (SDK) Azure pour Go pour l’authentification et AAD
 
-Le tableau suivant contient des liens vers des exemples sélectionnés de code source Go que vous pouvez utiliser pour authentifier à l’aide du kit de développement logiciel (SDK) pour Go et pour utiliser des services d’Azure Active Directory (AAD). 
+Le tableau suivant contient des liens vers des exemples sélectionnés de code source Go que vous pouvez utiliser pour authentifier à l’aide du kit de développement logiciel (SDK) Azure SDK pour Go et pour utiliser des services d’Azure Active Directory (AAD).
 
 Tous les exemples pour le kit de développement logiciel (SDK) Azure pour Go sont disponibles dans [GitHub](https://github.com/Azure-Samples/azure-sdk-for-go-samples).
 
