@@ -4,30 +4,32 @@ description: Déployez une machine virtuelle à l’aide du kit de développemen
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 07/13/2018
+ms.date: 09/05/2018
 ms.topic: quickstart
-ms.prod: azure
 ms.technology: azure-sdk-go
 ms.service: virtual-machines
 ms.devlang: go
-ms.openlocfilehash: 6b1de35748fb7694d45715fa7f028d5730530d2e
-ms.sourcegitcommit: d1790b317a8fcb4d672c654dac2a925a976589d4
+ms.openlocfilehash: a7970be0857fd414d776241b033af0c23457790c
+ms.sourcegitcommit: 8b9e10b960150dc08f046ab840d6a5627410db29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39039554"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44059133"
 ---
 # <a name="quickstart-deploy-an-azure-virtual-machine-from-a-template-with-the-azure-sdk-for-go"></a>Démarrage rapide : déployer une machine virtuelle à partir d’un modèle avec le kit de développement logiciel Microsoft Azure SDK pour Go
 
-Ce démarrage rapide porte sur le déploiement de ressources à partir d’un modèle avec le kit de développement logiciel Microsoft Azure SDK pour Go. Les modèles sont des instantanés de toutes les ressources contenues dans un [groupe de ressources Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview). Durant la procédure, vous vous familiariserez avec les fonctionnalités et les conventions du kit de développement logiciel (SDK) lors de l’exécution d’une tâche utile.
+Ce démarrage rapide vous montre comment déployer des ressources à partir d’un modèle Azure Resource Manager, via Azure SDK pour Go. Les modèles sont des instantanés de toutes les ressources contenues dans un [groupe de ressources Azure](/azure/azure-resource-manager/resource-group-overview). Durant la procédure, vous allez vous familiariser avec les fonctionnalités et les conventions du Kit de développement logiciel (SDK).
 
 À la fin de ce démarrage rapide, vous devrez connecter une machine virtuelle en cours d’exécution avec un nom d’utilisateur et un mot de passe.
+
+> [!NOTE]
+> Pour voir la création d’une machine virtuelle dans Go sans utiliser de modèle Resource Manager, il existe un [exemple impératif](https://github.com/Azure-Samples/azure-sdk-for-go-samples/blob/master/compute/vm.go) qui montre comment générer et configurer toutes les ressources de machine virtuelle avec le Kit de développement logiciel (SDK). Le fait d’utiliser un modèle dans cet exemple permet de se concentrer sur les conventions du Kit de développement logiciel (SDK), sans entrer trop dans les détails sur l’architecture de service Azure.
 
 [!INCLUDE [quickstarts-free-trial-note](includes/quickstarts-free-trial-note.md)]
 
 [!INCLUDE [cloud-shell-try-it.md](includes/cloud-shell-try-it.md)]
 
-Si vous utilisez une installation locale de l’interface de ligne de commande Azure, ce démarrage rapide requiert la version d’interface CLI __2.0.28__ ou une version ultérieure. Exécutez `az --version` pour vous assurer que votre installation d’interface de ligne de commande répond à cette exigence. Si vous devez effectuer une installation ou une mise à niveau, consultez [Installer Azure CLI 2.0](/cli/azure/install-azure-cli).
+Si vous utilisez une installation locale de l’interface de ligne de commande Azure, ce démarrage rapide requiert la version d’interface CLI __2.0.28__ ou une version ultérieure. Exécutez `az --version` pour vous assurer que votre installation d’interface de ligne de commande répond à cette exigence. Si vous devez effectuer une installation ou une mise à niveau, consultez [Installer Azure CLI](/cli/azure/install-azure-cli).
 
 ## <a name="install-the-azure-sdk-for-go"></a>Installer le kit de développement logiciel Microsoft Azure SDK pour Go
 
@@ -38,7 +40,7 @@ Si vous utilisez une installation locale de l’interface de ligne de commande A
 Pour vous connecter en mode non interactif sur Azure avec une application, vous avez besoin d’un principal de service. Les principaux de service font partie du contrôle d’accès basé sur le rôle (RBAC), qui crée une identité d’utilisateur unique. Pour créer un principal de service avec l’interface CLI, exécutez la commande suivante :
 
 ```azurecli-interactive
-az ad sp create-for-rbac --name az-go-vm-quickstart --sdk-auth > quickstart.auth
+az ad sp create-for-rbac --sdk-auth > quickstart.auth
 ```
 
 Définissez la variable d’environnement `AZURE_AUTH_LOCATION` pour qu’elle devienne le chemin d’accès complet à ce fichier. Ensuite, le kit de développement logiciel (SDK) localise et lit les informations d’identification directement à partir de ce fichier, sans que vous ayez à apporter des modifications ou à enregistrer des informations depuis le principal de service.
@@ -62,13 +64,7 @@ cd $GOPATH/src/github.com/azure-samples/azure-sdk-for-go-samples/quickstarts/dep
 go run main.go
 ```
 
-En cas de défaillance dans le déploiement, vous obtenez un message indiquant qu’un problème a eu lieu, mais il peut ne pas donner assez de détails. À l’aide de l’interface de ligne de commande Azure, obtenez les détails complets de l’échec du déploiement avec la commande suivante :
-
-```azurecli-interactive
-az group deployment show -g GoVMQuickstart -n VMDeployQuickstart
-```
-
-Si le déploiement réussit, un message comportant le nom d’utilisateur, l’adresse IP et le mot de passe pour se connecter à la machine virtuelle nouvellement créée s’affiche. Connectez-vous avec SSH à cette machine pour vérifier qu’elle est en cours d’exécution.
+Si le déploiement réussit, un message comportant le nom d’utilisateur, l’adresse IP et le mot de passe pour se connecter à la machine virtuelle nouvellement créée s’affiche. Connectez-vous avec SSH à cette machine pour vérifier qu’elle est en cours d’exécution. 
 
 ## <a name="cleaning-up"></a>Nettoyage
 
@@ -77,6 +73,18 @@ Nettoyez les ressources créées au cours de ce démarrage rapide en supprimant 
 ```azurecli-interactive
 az group delete -n GoVMQuickstart
 ```
+
+Supprimez également le principal de service qui a été créé. Dans le fichier `quickstart.auth`, il existe une clé JSON pour `clientId`. Copiez cette valeur dans la variable d’environnement `CLIENT_ID_VALUE` et exécutez la commande Azure CLI suivante :
+
+```azurecli-interactive
+az ad sp delete --id ${CLIENT_ID_VALUE}
+```
+
+Emplacement où vous indiquez la valeur de `CLIENT_ID_VALUE` depuis `quickstart.auth`.
+
+> [!WARNING]
+> L’échec de suppression du principal de service de cette application le laisse inactif dans votre locataire Azure Active Directory.
+> Lors de la génération du nom et du mot de passe en tant qu’UUID pour le principal de service, vérifiez que vous respectez les pratiques de sécurité appropriées en supprimant l’ensemble des applications Azure Active Directory et principaux de service non utilisés.
 
 ## <a name="code-in-depth"></a>Le code en profondeur
 
@@ -111,7 +119,7 @@ var (
 
 Les valeurs sont déclarées, ce qui donne les noms des ressources créées. L’emplacement est également spécifié ici, vous pouvez le modifier pour voir comment les déploiements se comportent dans d’autres centres de données. Chaque centre de données ne dispose pas de toutes les ressources requises disponibles.
 
-Le type `clientInfo` est déclaré pour encapsuler toutes les informations qui doivent être chargées de manière indépendante à partir du fichier d’authentification pour configurer les clients dans le Kit de développement logiciel (SDK) et définir le mot de passe de la machine virtuelle.
+Le type `clientInfo` contient les informations chargées à partir du fichier d’authentification pour configurer les clients dans le Kit de développement logiciel (SDK) et définir le mot de passe de la machine virtuelle.
 
 Les constantes `templateFile` et `parametersFile` pointent vers les fichiers nécessaires au déploiement. Le `authorizer` sera configuré par le kit de développement logiciel (SDK) Go pour l’authentification, et la variable `ctx` est un [contexte Go](https://blog.golang.org/context) pour les opérations réseau.
 
@@ -170,7 +178,7 @@ Les étapes que le code parcourt sont, dans l’ordre :
 * Créer le déploiement au sein de ce groupe (`createDeployment`)
 * Obtenir et afficher des informations de connexion pour la machine virtuelle déployée (`getLogin`)
 
-### <a name="creating-the-resource-group"></a>Création du groupe de ressources
+### <a name="create-the-resource-group"></a>Créer le groupe de ressources
 
 La fonction `createGroup` crée le groupe de ressources. Examiner le flux des appels et les arguments illustre la façon dont les interactions du service sont structurées dans le kit de développement logiciel (SDK).
 
@@ -197,7 +205,7 @@ La fonction [`to.StringPtr`](https://godoc.org/github.com/Azure/go-autorest/auto
 
 La méthode `groupsClient.CreateOrUpdate` retourne un pointeur vers un type de données qui représente le groupe de ressources. Une valeur de retour directe de ce type indique une opération d’exécution courte qui est destinée à être synchrone. Dans la section suivante, vous verrez un exemple d’une opération longue et comment interagir avec elle.
 
-### <a name="performing-the-deployment"></a>Effectuer le déploiement
+### <a name="perform-the-deployment"></a>Effectuer le déploiement
 
 Une fois que le groupe de ressources est créé, il est temps d’exécuter le déploiement. Ce code est divisé en sections plus petites pour mettre en évidence les différentes parties de sa logique.
 
@@ -254,20 +262,13 @@ La différence principale réside dans la valeur de retour de la méthode `deplo
     if err != nil {
         return
     }
-    deployment, err = deploymentFuture.Result(deploymentsClient)
-
-    // Work around possible bugs or late-stage failures
-    if deployment.Name == nil || err != nil {
-        deployment, _ = deploymentsClient.Get(ctx, resourceGroupName, deploymentName)
-    }
-    return
+    return deploymentFuture.Result(deploymentsClient)
+}
 ```
 
 Pour cet exemple, la meilleure chose à faire est d’attendre que l’opération se termine. L’attente d’une perspective requiert à la fois un [objet de contexte](https://blog.golang.org/context) et le client ayant créé le `Future`. Il existe deux sources d’erreur possibles ici : une erreur côté client lors de la tentative d’appel de la méthode et une réponse d’erreur provenant du serveur. Cette dernière est retournée dans le cadre de l’appel `deploymentFuture.Result`.
 
-Une fois les informations de déploiement récupérées, il existe une solution de contournement des bogues éventuels, à cause desquels les informations de déploiement peuvent être vides, grâce à un appel manuel à `deploymentsClient.Get` pour vous assurer que les données sont remplies.
-
-### <a name="obtaining-the-assigned-ip-address"></a>Obtention de l’adresse IP attribuée
+### <a name="get-the-assigned-ip-address"></a>Obtenir l’adresse IP attribuée
 
 Pour toute opération avec la machine virtuelle nouvellement créée, vous aurez besoin de l’adresse IP attribuée. Les adresses IP sont des ressources Azure distinctes et autonomes, liées aux ressources du contrôleur d’interface réseau.
 
@@ -301,7 +302,7 @@ La valeur de l’utilisateur de la machine virtuelle est également chargée à 
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce guide de démarrage rapide, vous avez pris un modèle existant et l’avez déployé via Go. Puis vous l’avez connecté à la machine virtuelle nouvellement créée via le protocole SSH pour vous assurer qu’il s’exécute.
+Dans ce guide de démarrage rapide, vous avez pris un modèle existant et l’avez déployé via Go. Puis vous l’avez connecté à la machine virtuelle nouvellement créée via le protocole SSH.
 
 Pour en savoir sur l’utilisation des machines virtuelles dans l’environnement Azure avec Go, consultez les [exemples de calcul Azure pour Go](https://github.com/Azure-Samples/azure-sdk-for-go-samples/tree/master/compute) ou les [exemples de gestion de ressources Azure pour Go](https://github.com/Azure-Samples/azure-sdk-for-go-samples/tree/master/resources).
 

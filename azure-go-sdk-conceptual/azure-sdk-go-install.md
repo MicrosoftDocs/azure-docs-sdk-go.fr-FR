@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-sdk-go
 ms.devlang: go
-ms.openlocfilehash: 3388359bba791c87025b6ffd0e6b476f95589f73
-ms.sourcegitcommit: 81e97407e6139375bf7357045e818c87a17dcde1
+ms.openlocfilehash: 013a771345d96f0fa8dbece3218a01650744f70b
+ms.sourcegitcommit: 8b9e10b960150dc08f046ab840d6a5627410db29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36262974"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44059184"
 ---
 # <a name="install-the-azure-sdk-for-go"></a>Installer le kit de développement logiciel Microsoft Azure SDK pour Go
 
@@ -37,9 +37,9 @@ Certains services Azure ont leurs propres Kitw de développement logiciel (SDK) 
 
 ## <a name="vendor-the-azure-sdk-for-go"></a>Fournir le kit de développement logiciel (SDK) Azure pour Go
 
-Le kit de développement logiciel Microsoft Azure SDK pour Go peut être fourni via [dep](https://github.com/golang/dep). Pour des raisons de stabilité, le vendoring est recommandé. Pour pouvoir utiliser la prise en charge `dep`, ajoutez `github.com/Azure/azure-sdk-for-go` à une section `[[constraint]]` de votre `Gopkg.toml`. Par exemple, pour fournir la version `14.0.0`, ajoutez l’entrée suivante :
+Le kit de développement logiciel Microsoft Azure SDK pour Go peut être fourni via [dep](https://github.com/golang/dep). Pour des raisons de stabilité, le vendoring est recommandé. Pour utiliser `dep` dans votre projet, ajoutez `github.com/Azure/azure-sdk-for-go` à une section `[[constraint]]` de votre élément `Gopkg.toml`. Par exemple, pour fournir la version `14.0.0`, ajoutez l’entrée suivante :
 
-```
+```toml
 [[constraint]]
 name = "github.com/Azure/azure-sdk-for-go"
 version = "14.0.0"
@@ -62,13 +62,14 @@ Vous obtenez une liste complète des modules disponibles à partir de GoDoc pour
 [autorest/adal]: https://godoc.org/github.com/Azure/go-autorest/autorest/adal
 [autorest/to]: https://godoc.org/github.com/Azure/go-autorest/autorest/to
 
-Les modules pour les Services Azure sont gérés indépendamment des API du kit de développement logiciel (SDK) pour ces derniers. Ces versions font partie du chemin d’accès d’importation du module et proviennent d’une _version du service_ ou d’un _profil_. Actuellement, il est recommandé d’utiliser une version spécifique du service pour le développement et la mise en production. Les services se trouvent sous le module `services`. Le chemin d’accès complet pour l’importation est le nom du service, suivi par la version au format `YYYY-MM-DD`, suivi du nom de service à nouveau. Par exemple, pour inclure la version `2017-03-30` du service de calcul :
+Les versions des packages Go et des services Azure sont gérées de façon indépendante. Les versions du service font partie du chemin d’accès d’importation du module, en dessous du module `services`. Le chemin d’accès complet du module est constitué du nom du service, suivi par la version au format `YYYY-MM-DD`, suivi à nouveau du nom du service. Par exemple, pour importer la version `2017-03-30` du service Compute :
 
 ```go
 import "github.com/Azure/azure-sdk-for-go/services/compute/mgmt/2017-03-30/compute"
 ```
 
-Actuellement, il est recommandé d’utiliser la version la plus récente d’un service, à moins que vous n’ayez une raison de faire autrement.
+Il est recommandé d’utiliser la dernière version d’un service au début du développement et d’assurer en permanence sa cohérence.
+Les exigences relatives au service peuvent varier entre des versions qui peuvent interrompre votre code, même si aucune mise à jour du Kit de développement logiciel (SDK) Go n’est disponible pendant cette période.
 
 Si vous avez besoin d’un instantané collectif des services, vous pouvez également sélectionner une version de profil unique. Actuellement, le seul profil verrouillé est la version `2017-03-09`, qui ne dispose peut-être pas des fonctionnalités les plus récentes des services. Les profils sont situés sous le module `profiles`, avec leur version au format `YYYY-MM-DD`. Les services sont regroupées sous leur version de profil. Par exemple, pour importer le module de Gestion des ressources Azure à partir du profil `2017-03-09` :
 

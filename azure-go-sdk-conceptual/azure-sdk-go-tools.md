@@ -1,20 +1,20 @@
 ---
-title: Outils pour les développeurs Go
+title: Outils pour les développeurs qui utilisent le kit de développement logiciel Microsoft Azure SDK pour Go
 description: Outils permettant de travailler avec le kit de développement logiciel Microsoft Azure SDK pour Go et les services Azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 07/13/2018
+ms.date: 09/05/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-sdk-go
 ms.devlang: go
-ms.openlocfilehash: dfa3912ac13e6f6d52d607f9dcc150f3a5b57602
-ms.sourcegitcommit: d1790b317a8fcb4d672c654dac2a925a976589d4
+ms.openlocfilehash: 70cf7d645f47df29e8e42599a0acd75858144783
+ms.sourcegitcommit: 8b9e10b960150dc08f046ab840d6a5627410db29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39039503"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44059201"
 ---
 # <a name="tools-for-developers-using-the-azure-sdk-for-go"></a>Outils pour les développeurs qui utilisent le kit de développement logiciel Microsoft Azure SDK pour Go
 
@@ -29,22 +29,22 @@ Azure CLI fournit une interface de ligne de commande pour créer et configurer d
 
 ## <a name="visual-studio-code"></a>Visual Studio Code
 
-Visual Studio Code est un éditeur léger offrant une prise en charge complète pour le langage Go via des extensions. Ces extensions incluent la prise en charge de fonctionnalités telles que la saisie semi-automatique, les modèles `impl`, la refactorisation et le débogage. Visual Studio Code offre également de nombreuses extensions pour les outils de développement courants tels que le contrôle de code source et offre même des extensions pour des interactions directes avec les services Azure. Microsoft gère une extension de métadonnées officielle comprenant ces extensions Azure, dont une interface interactive pour l’interface de ligne de commande Azure.
+Visual Studio Code est un éditeur léger qui prend en charge Go. Cette extension inclut des fonctionnalités telles que l’auto-complétion, les modèles `impl`, la refactorisation et le débogage. Visual Studio Code offre également la prise en charge d’un accès au sein de l’éditeur pour le contrôle de code source, ainsi que des extensions pour utiliser les services Azure.
 
 * [Installation de Visual Studio Code](https://code.visualstudio.com/Download)
 * [Obtenir l’extension Go de Visual Studio Code](https://code.visualstudio.com/docs/languages/go)
-* [Obtenir l’extension Azure Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-azureextensionpack)
+* [Obtenir l’extension Azure Tools de Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-azureextensionpack)
 
 ## <a name="cicd-with-azure-devops-project"></a>CI/CD avec Azure DevOps Project
 
-Avec le pipeline Azure DevOps Project, vous pouvez configurer une intégration continue et un déploiement continu pour vos applications Go. Vous n’avez besoin que d’un référentiel Git disponible, et vous pouvez configurer le déploiement et le test directement sur vos ressources Azure. Le pipeline de configuration est facile à créer et à gérer, et étant approvisionné directement sur Azure, vous pouvez le contrôler de la même façon que vos autres ressources Azure.
+Les pipelines de projet Azure DevOps vous permettent de configurer un système d’intégration continue pour vos applications Go. Vous avez uniquement besoin d’un référentiel Git pour pouvoir effectuer des déploiements et des tests directement sur Azure.
 
 > [!div class="nextstepaction"]
-> [Découvrez comment créer un pipeline CI/CD avec Azure DevOps Project](/devops-project/azure-devops-project-go)
+> [Découvrez comment créer un pipeline CI/CD avec Azure DevOps Project](/azure/devops-project/azure-devops-project-go)
 
 ## <a name="dependency-management-with-dep"></a>Gestion des dépendances avec dep
 
-Il existe plusieurs façons de gérer vos dépendances de package et de faire du vendoring avec Go, car il n’existe encore aucune solution officielle. La méthode recommandée pour effectuer cette gestion est d’utiliser le gestionnaire de dépendances `dep`. Le kit de développement logiciel (SDK) Azure pour Go utilise dep pour son vendoring et est assuré d’obtenir correctement les dépendances pour n’importe quel autre projet à l’aide de dep.
+Azure SDK pour Go utilise dep pour la gestion des dépendances. La commande dep vous permet d’extraire les exigences de fournisseurs pour votre application Go, ce qui évite les conflits de versions et garantit le bon fonctionnement de votre projet.
 
 > [!div class="nextstepaction"]
 > [Obtenir le gestionnaire de dépendances dep](https://github.com/golang/dep)
