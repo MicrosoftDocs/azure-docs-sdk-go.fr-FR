@@ -2,24 +2,23 @@
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 02/12/2018
+ms.date: 09/05/2018
 ms.topic: include
 ms.prod: azure
 ms.technology: azure-cli
-ms.openlocfilehash: fcbdadcd1d038f93ee609d5067dc2f7451e4badc
-ms.sourcegitcommit: 2a3bd491e087a1d0e7d269bed896c029357d62a6
+ms.openlocfilehash: 8773e0bb59d7ad7829616fa304cedc9889fe1c76
+ms.sourcegitcommit: 8b9e10b960150dc08f046ab840d6a5627410db29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38988059"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44059253"
 ---
-## <a name="launch-azure-cloud-shell"></a><span data-ttu-id="701c7-101">Lancement d’Azure Cloud Shell</span><span class="sxs-lookup"><span data-stu-id="701c7-101">Launch Azure Cloud Shell</span></span>
+## <a name="launch-azure-cloud-shell"></a><span data-ttu-id="b7383-101">Lancement d’Azure Cloud Shell</span><span class="sxs-lookup"><span data-stu-id="b7383-101">Launch Azure Cloud Shell</span></span>
 
-<span data-ttu-id="701c7-102">Azure Cloud Shell est un interpréteur de commandes interactif et gratuit que vous pouvez utiliser pour exécuter les étapes de cet article.</span><span class="sxs-lookup"><span data-stu-id="701c7-102">The Azure Cloud Shell is a free interactive shell that you can use to run the steps in this article.</span></span> <span data-ttu-id="701c7-103">Il contient des outils Azure courants préinstallés et configurés pour être utilisés avec votre compte.</span><span class="sxs-lookup"><span data-stu-id="701c7-103">It has common Azure tools pre-installed and configured to use with your account.</span></span> <span data-ttu-id="701c7-104">Cliquez simplement sur **Copier** pour copier le code, collez-le dans Cloud Shell, et appuyez sur Entrée pour l’exécuter.</span><span class="sxs-lookup"><span data-stu-id="701c7-104">Just click the **Copy** to copy the code, paste it into the Cloud Shell, and then press enter to run it.</span></span>  <span data-ttu-id="701c7-105">Cloud Shell peut être lancé de plusieurs façons :</span><span class="sxs-lookup"><span data-stu-id="701c7-105">There are a few ways to launch the Cloud Shell:</span></span>
+<span data-ttu-id="b7383-102">Azure Cloud Shell est un interpréteur de commandes interactif qui s’exécute sur Azure.</span><span class="sxs-lookup"><span data-stu-id="b7383-102">The Azure Cloud Shell is an interactive shell that runs on Azure.</span></span> <span data-ttu-id="b7383-103">Il contient des outils courants préinstallés et configurés pour être utilisés avec votre compte.</span><span class="sxs-lookup"><span data-stu-id="b7383-103">It has common tools pre-installed and configured to use with your account.</span></span> <span data-ttu-id="b7383-104">Cliquez simplement sur **Copier** pour copier le code, collez-le dans Cloud Shell, et appuyez sur Entrée pour l’exécuter.</span><span class="sxs-lookup"><span data-stu-id="b7383-104">Just click the **Copy** to copy the code, paste it into the Cloud Shell, and then press enter to run it.</span></span>  <span data-ttu-id="b7383-105">Cloud Shell peut être lancé de plusieurs façons :</span><span class="sxs-lookup"><span data-stu-id="b7383-105">There are a few ways to launch the Cloud Shell:</span></span>
 
-|  |   |
+|   | |
 |-----------------------------------------------|---|
-| <span data-ttu-id="701c7-106">Cliquez sur **Essayer** dans le coin supérieur droit d’un bloc de code.</span><span class="sxs-lookup"><span data-stu-id="701c7-106">Click **Try It** in the upper right corner of a code block.</span></span> | ![Cloud Shell dans cet article](../media/cloud-shell-try-it/cli-try-it.png) |
-| <span data-ttu-id="701c7-108">Ouvrez Cloud Shell dans votre navigateur.</span><span class="sxs-lookup"><span data-stu-id="701c7-108">Open Cloud Shell in your browser.</span></span> | [![https://shell.azure.com/bash](../media/cloud-shell-try-it/launchcloudshell.png)](https://shell.azure.com/bash) |
-| <span data-ttu-id="701c7-109">Cliquez sur le bouton **Cloud Shell** du menu situé dans l’angle supérieur droit de la fenêtre du [portail Azure](https://portal.azure.com).</span><span class="sxs-lookup"><span data-stu-id="701c7-109">Click the **Cloud Shell** button on the menu in the upper right of the [Azure portal](https://portal.azure.com).</span></span> | ![Cloud Shell dans le portail](../media/cloud-shell-try-it/cloud-shell-menu.png) |
-|  |  |
+| <span data-ttu-id="b7383-106">Cliquez sur **Essayer** dans le coin supérieur droit d’un bloc de code.</span><span class="sxs-lookup"><span data-stu-id="b7383-106">Click **Try It** in the upper right corner of a code block.</span></span> | ![Cloud Shell dans cet article](../media/cloud-shell-try-it/cli-try-it.png) |
+| <span data-ttu-id="b7383-108">Ouvrez Cloud Shell dans votre navigateur.</span><span class="sxs-lookup"><span data-stu-id="b7383-108">Open Cloud Shell in your browser.</span></span> | [![https://shell.azure.com/bash](../media/cloud-shell-try-it/launchcloudshell.png)](https://shell.azure.com/bash) |
+| <span data-ttu-id="b7383-109">Cliquez sur le bouton **Cloud Shell** du menu situé dans l’angle supérieur droit de la fenêtre du [portail Azure](https://portal.azure.com).</span><span class="sxs-lookup"><span data-stu-id="b7383-109">Click the **Cloud Shell** button on the menu in the upper right of the [Azure portal](https://portal.azure.com).</span></span> | ![Cloud Shell dans le portail](../media/cloud-shell-try-it/cloud-shell-menu.png) |
