@@ -11,12 +11,12 @@ ms.technology: azure-sdk-go
 ms.devlang: go
 ms.service: active-directory
 ms.component: authentication
-ms.openlocfilehash: 28fd4a4c0832ab19dcf52dc549d0ddc0d1eec6f1
-ms.sourcegitcommit: 8b9e10b960150dc08f046ab840d6a5627410db29
+ms.openlocfilehash: 8f94b9ba715c32263d324306cce69bd484c05702
+ms.sourcegitcommit: c435f6602524565d340aac5506be5e955e78f16c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44059099"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44711972"
 ---
 # <a name="authentication-methods-in-the-azure-sdk-for-go"></a>Méthodes d’authentification dans le Kit de développement logiciel (SDK) Azure pour Go
 
@@ -30,7 +30,7 @@ Le Kit de développement logiciel (SDK) Azure pour Go offre différents types d�
 |---------------------|---------------------|
 | Authentification par certificat | Vous avez un certificat X509 qui a été configuré pour un utilisateur ou un principal de service Azure Active Directory (AAD). Pour en savoir plus, consultez [Bien démarrer avec l’authentification par certificat dans Azure Active Directory]. |
 | Informations d'identification du client | Vous avez un principal de service configuré pour cette application ou pour la classe d’applications à laquelle elle appartient. Pour en savoir plus, consultez [Créer un principal de service avec l’interface de ligne de commande Azure 2.0]. |
-| Identité du service administré (MSI) | Votre application s’exécute sur une ressource Azure qui a été configurée avec Identité du service administré (MSI). Pour en savoir plus, consultez [Identité du service administré (MSI) pour les ressources Azure]. |
+| Identités gérées pour les ressources Azure | Votre application s’exécute sur une ressource Azure qui a été configurée avec une identité managée. Pour en savoir plus, consultez [Identités gérées pour ressources Azure]. |
 | Jeton d’appareil | Votre application est destinée à être utilisée de manière interactive __uniquement__. Les utilisateurs peuvent avoir l’authentification multifacteur activée. Les utilisateurs ont accès à un navigateur web pour se connecter. Pour plus d’informations, consultez [Utilisation de l’authentification par jeton d’appareil](#use-device-token-authentication).|
 | Nom d’utilisateur/mot de passe | Vous avez une application interactive qui ne peut pas utiliser d’autres méthodes d’authentification. L’authentification multifacteur n’est pas activée pour la connexion AAD de vos utilisateurs. |
 
@@ -42,7 +42,7 @@ Le Kit de développement logiciel (SDK) Azure pour Go offre différents types d�
 
 [Bien démarrer avec l’authentification par certificat dans Azure Active Directory]: /azure/active-directory/active-directory-certificate-based-authentication-get-started
 [Créer un principal de service avec l’interface de ligne de commande Azure 2.0]: /cli/azure/create-an-azure-service-principal-azure-cli
-[Identité du service administré (MSI) pour les ressources Azure]: /azure/active-directory/managed-service-identity/overview
+[Identités gérées pour ressources Azure]: /azure/active-directory/managed-identities-azure-resources/overview
 
 Ces types d’authentification sont disponibles par le biais de différentes méthodes.
 
@@ -65,7 +65,7 @@ L’authentification basée sur l’environnement prend en charge toutes les mé
 * Informations d'identification du client
 * Certificats X509
 * Nom d’utilisateur/mot de passe
-* Identité du service administré (MSI)
+* Identités gérées pour les ressources Azure
 
 Si les valeurs d’un type d’authentification sont annulées ou s’il est refusé, le Kit de développement logiciel (SDK) essaie automatiquement d’utiliser le type d’authentification suivant. Quand tous les autres types d’authentification disponibles ont été testés, le Kit de développement logiciel (SDK) renvoie une erreur.
 
@@ -84,7 +84,7 @@ Le tableau suivant répertorie les variables d’environnement qui doivent être
 | | `AZURE_CLIENT_ID` | L’ID du client d’application. |
 | | `AZURE_USERNAME` | Le nom d’utilisateur avec lequel se connecter. |
 | | `AZURE_PASSWORD` | Le mot de passe avec lequel se connecter. |
-| __MSI__ | | Aucune information d’identification n’est nécessaire pour l’authentification MSI. L’application doit être exécutée sur une ressource Azure configurée pour utiliser MSI. Pour plus de détails, consultez [Identité du service administré (MSI) pour les ressources Azure]. |
+| __Identité gérée__ | | Aucune information d’identification n’est nécessaire pour l’authentification avec identité managée. L’application doit être exécutée sur une ressource Azure configurée pour utiliser des identités managées. Pour plus d’informations, consultez [Identités gérées pour ressources Azure]. |
 
 Pour vous connecter à un point de terminaison cloud ou de gestion autre que le cloud public Azure par défaut, définissez les variables d’environnement suivantes. Voici les raisons les plus courantes pour lesquelles vous devez les définir : si vous utilisez Azure Stack, un cloud dans une autre région géographique ou le modèle de déploiement classique.
 
@@ -168,7 +168,7 @@ Le tableau suivant répertorie les types dans le Kit de développement logiciel 
 |---------------------|-----------------------|
 | Authentification par certificat | [ClientCertificateConfig] |
 | Informations d'identification du client | [ClientCredentialsConfig] |
-| Identité du service administré (MSI) | [MSIConfig] |
+| Identités gérées pour les ressources Azure | [MSIConfig] |
 | Nom d’utilisateur/mot de passe | [UsernamePasswordConfig] |
 
 [ClientCertificateConfig]: https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#ClientCertificateConfig
