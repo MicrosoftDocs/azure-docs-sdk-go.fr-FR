@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.technology: azure-sdk-go
 ms.devlang: go
 ms.component: authentication
-ms.openlocfilehash: f5c2c56e43828f0bedad0b5781dc71991ce1fd3e
-ms.sourcegitcommit: 172f81dd6e4c6a275dc8031815aa87cdb488cbf0
+ms.openlocfilehash: c2c3dccfa8da5cfe57fee0b90139002068982560
+ms.sourcegitcommit: 887b15afcdeaf926a5f3d21b64e4045167fd062c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47231673"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "49481980"
 ---
 # <a name="authentication-methods-in-the-azure-sdk-for-go"></a>Méthodes d’authentification dans le Kit de développement logiciel (SDK) Azure pour Go
 
@@ -70,20 +70,21 @@ Si les valeurs d’un type d’authentification sont annulées ou s’il est ref
 
 Le tableau suivant répertorie les variables d’environnement qui doivent être définies pour chaque type d’authentification pris en charge par l’authentification basée sur l’environnement.
 
-| Type d'authentification | Variable d’environnement | Description |
-| ------------------- | -------------------- | ----------- |
-| __Informations d’identification du client__ | `AZURE_TENANT_ID` | L’ID du locataire Active Directory auquel appartient le principal du service. |
-| | `AZURE_CLIENT_ID` | Le nom ou ID du principal du service. |
-| | `AZURE_CLIENT_SECRET` | Secret associé au principal du service. |
-| __Certificate__ | `AZURE_TENANT_ID` | L’ID du locataire Active Directory avec lequel le certificat est enregistré. |
-| | `AZURE_CLIENT_ID` | L’ID client d’application associé au certificat. |
-| | `AZURE_CERTIFICATE_PATH` | Le chemin d’accès au fichier de certificat client. |
-| | `AZURE_CERTIFICATE_PASSWORD` | Le mot de passe du certificat client. |
-| __Nom d’utilisateur/mot de passe__ | `AZURE_TENANT_ID` | L’ID du locataire Active Directory auquel appartient l’utilisateur. |
-| | `AZURE_CLIENT_ID` | L’ID du client d’application. |
-| | `AZURE_USERNAME` | Le nom d’utilisateur avec lequel se connecter. |
-| | `AZURE_PASSWORD` | Le mot de passe avec lequel se connecter. |
-| __Identité gérée__ | | Aucune information d’identification n’est nécessaire pour l’authentification avec identité managée. L’application doit être exécutée sur une ressource Azure configurée pour utiliser des identités managées. Pour plus d’informations, consultez [Identités managées pour les ressources Azure]. |
+
+|  Type d'authentification   |     Variable d’environnement     |                                                                                                     Description                                                                                                      |
+|------------------------|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Informations d’identification du client** |      `AZURE_TENANT_ID`       |                                                                    L’ID du locataire Active Directory auquel appartient le principal du service.                                                                     |
+|                        |      `AZURE_CLIENT_ID`       |                                                                                       Le nom ou ID du principal du service.                                                                                       |
+|                        |    `AZURE_CLIENT_SECRET`     |                                                                                  Secret associé au principal du service.                                                                                   |
+|    **Certificate**     |      `AZURE_TENANT_ID`       |                                                                   L’ID du locataire Active Directory avec lequel le certificat est enregistré.                                                                    |
+|                        |      `AZURE_CLIENT_ID`       |                                                                              L’ID client d’application associé au certificat.                                                                              |
+|                        |   `AZURE_CERTIFICATE_PATH`   |                                                                                       Le chemin d’accès au fichier de certificat client.                                                                                       |
+|                        | `AZURE_CERTIFICATE_PASSWORD` |                                                                                       Le mot de passe du certificat client.                                                                                       |
+| **Nom d’utilisateur/mot de passe**  |      `AZURE_TENANT_ID`       |                                                                           L’ID du locataire Active Directory auquel appartient l’utilisateur.                                                                           |
+|                        |      `AZURE_CLIENT_ID`       |                                                                                              L’ID du client d’application.                                                                                              |
+|                        |       `AZURE_USERNAME`       |                                                                                            Le nom d’utilisateur avec lequel se connecter.                                                                                             |
+|                        |       `AZURE_PASSWORD`       |                                                                                            Le mot de passe avec lequel se connecter.                                                                                             |
+|  **Identité gérée**  |                              | Aucune information d’identification n’est nécessaire pour l’authentification avec identité managée. L’application doit être exécutée sur une ressource Azure configurée pour utiliser des identités managées. Pour plus d’informations, consultez [Identités managées pour les ressources Azure]. |
 
 Pour vous connecter à un point de terminaison cloud ou de gestion autre que le cloud public Azure par défaut, définissez les variables d’environnement suivantes. Voici les raisons les plus courantes pour lesquelles vous devez les définir : si vous utilisez Azure Stack, un cloud dans une autre région géographique ou le modèle de déploiement classique.
 
