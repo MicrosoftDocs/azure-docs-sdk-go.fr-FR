@@ -7,15 +7,15 @@ ms.topic: include
 ms.prod: azure
 ms.technology: azure-cli
 ms.openlocfilehash: 8773e0bb59d7ad7829616fa304cedc9889fe1c76
-ms.sourcegitcommit: 8b9e10b960150dc08f046ab840d6a5627410db29
+ms.sourcegitcommit: 887b15afcdeaf926a5f3d21b64e4045167fd062c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44059253"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "52293516"
 ---
 ## <a name="launch-azure-cloud-shell"></a>Lancement d’Azure Cloud Shell
 
-Azure Cloud Shell est un interpréteur de commandes interactif qui s’exécute sur Azure. Il contient des outils courants préinstallés et configurés pour être utilisés avec votre compte. Cliquez simplement sur **Copier** pour copier le code, collez-le dans Cloud Shell, et appuyez sur Entrée pour l’exécuter.  Cloud Shell peut être lancé de plusieurs façons :
+Azure Cloud Shell est un interpréteur de commandes interactif qui s’exécute sur Azure. Il dispose d’outils courants préinstallés et configurés pour être utilisés avec votre compte. Cliquez simplement sur **Copier** pour copier le code, collez-le dans Cloud Shell, et appuyez sur Entrée pour l’exécuter.  Cloud Shell peut être lancé de plusieurs façons :
 
 |   | |
 |-----------------------------------------------|---|
