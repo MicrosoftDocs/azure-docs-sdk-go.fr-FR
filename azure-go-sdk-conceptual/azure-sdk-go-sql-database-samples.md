@@ -1,6 +1,6 @@
 ---
-title: Exemples de kit de développement logiciel (SDK) Azure pour Go pour Azure SQL Database
-description: Échantillons sélectionnés pour utiliser Azure SQL Database à partir du kit de développement logiciel (SDK) Azure pour Go.
+title: Exemples de kit SDK Azure pour Go pour Azure SQL Database
+description: Exemples sélectionnés pour utiliser Azure SQL Database à partir du kit SDK Azure pour Go.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -16,7 +16,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 12/26/2018
 ms.locfileid: "53786029"
 ---
-# <a name="azure-sdk-for-go-samples-for-azure-sql-database"></a>Exemples de kit de développement logiciel (SDK) Azure pour Go pour Azure SQL Database
+# <a name="azure-sdk-for-go-samples-for-azure-sql-database"></a>Exemples de kit SDK Azure pour Go pour Azure SQL Database
 
 Le tableau suivant renvoie à des exemples sélectionnés qui illustrent l’utilisation d’Azure SQL Database depuis Azure SDK pour Go.
 

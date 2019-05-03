@@ -19,7 +19,7 @@ items:
         href: /azure/postgresql/connect-go?toc=%2fgo%2fazure%2ftoc.json
       - name: Base de données Azure pour MySQL
         href: /azure/mysql/connect-go?toc=%2fgo%2fazure%2ftoc.json
-      - name: Base de données SQL Azure
+      - name: Azure SQL Database
         href: /azure/sql-database/sql-database-connect-query-go?toc=%2fgo%2fazure%2ftoc.json
   - name: Exemples de code Go
     items:
@@ -29,7 +29,7 @@ items:
         href: azure-sdk-go-containers-samples.md
       - name: Calcul et mise en réseau
         href: azure-sdk-go-compute-networking-samples.md
-      - name: Base de données SQL Azure
+      - name: Azure SQL Database
         href: azure-sdk-go-sql-database-samples.md
       - name: Tous les exemples Go
         href: 'http://github.com/azure-samples/azure-sdk-for-go-samples'
