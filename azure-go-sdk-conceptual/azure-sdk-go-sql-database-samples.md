@@ -1,6 +1,6 @@
 ---
-title: Exemples de kit de développement logiciel (SDK) Azure pour Go pour Azure SQL Database
-description: Échantillons sélectionnés pour utiliser Azure SQL Database à partir du kit de développement logiciel (SDK) Azure pour Go.
+title: Exemples de kit SDK Azure pour Go pour Azure SQL Database
+description: Exemples sélectionnés pour utiliser Azure SQL Database à partir du kit SDK Azure pour Go.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -16,12 +16,12 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 12/26/2018
 ms.locfileid: "53786029"
 ---
-# <a name="azure-sdk-for-go-samples-for-azure-sql-database"></a><span data-ttu-id="3b720-103">Exemples de kit de développement logiciel (SDK) Azure pour Go pour Azure SQL Database</span><span class="sxs-lookup"><span data-stu-id="3b720-103">Azure SDK for Go samples for Azure SQL Database</span></span>
+# <a name="azure-sdk-for-go-samples-for-azure-sql-database"></a><span data-ttu-id="ddf0a-103">Exemples de kit SDK Azure pour Go pour Azure SQL Database</span><span class="sxs-lookup"><span data-stu-id="ddf0a-103">Azure SDK for Go samples for Azure SQL Database</span></span>
 
-<span data-ttu-id="3b720-104">Le tableau suivant renvoie à des exemples sélectionnés qui illustrent l’utilisation d’Azure SQL Database depuis Azure SDK pour Go.</span><span class="sxs-lookup"><span data-stu-id="3b720-104">The following table links to selected samples that demonstrate how to use Azure SQL Database from the Azure SDK for Go.</span></span>
+<span data-ttu-id="ddf0a-104">Le tableau suivant renvoie à des exemples sélectionnés qui illustrent l’utilisation d’Azure SQL Database depuis Azure SDK pour Go.</span><span class="sxs-lookup"><span data-stu-id="ddf0a-104">The following table links to selected samples that demonstrate how to use Azure SQL Database from the Azure SDK for Go.</span></span>
 
-<span data-ttu-id="3b720-105">Tous les exemples pour le kit de développement logiciel (SDK) Azure pour Go sont disponibles dans [GitHub](https://github.com/Azure-Samples/azure-sdk-for-go-samples).</span><span class="sxs-lookup"><span data-stu-id="3b720-105">All samples for the Azure SDK for Go are available on [GitHub](https://github.com/Azure-Samples/azure-sdk-for-go-samples).</span></span>
+<span data-ttu-id="ddf0a-105">Tous les exemples pour le kit de développement logiciel (SDK) Azure pour Go sont disponibles dans [GitHub](https://github.com/Azure-Samples/azure-sdk-for-go-samples).</span><span class="sxs-lookup"><span data-stu-id="ddf0a-105">All samples for the Azure SDK for Go are available on [GitHub](https://github.com/Azure-Samples/azure-sdk-for-go-samples).</span></span>
 
-| <span data-ttu-id="3b720-106">NOM</span><span class="sxs-lookup"><span data-stu-id="3b720-106">Name</span></span> | <span data-ttu-id="3b720-107">Description</span><span class="sxs-lookup"><span data-stu-id="3b720-107">Description</span></span> |
+| <span data-ttu-id="ddf0a-106">NOM</span><span class="sxs-lookup"><span data-stu-id="ddf0a-106">Name</span></span> | <span data-ttu-id="ddf0a-107">Description</span><span class="sxs-lookup"><span data-stu-id="ddf0a-107">Description</span></span> |
 |------|-------------|
-| [<span data-ttu-id="3b720-108">sql/sql</span><span class="sxs-lookup"><span data-stu-id="3b720-108">sql/sql</span></span>](https://github.com/Azure-Samples/azure-sdk-for-go-samples/blob/master/sql/sql.go) | <span data-ttu-id="3b720-109">Créer et gérer de nouveaux serveurs SQL et travailler avec des bases de données sur ces derniers.</span><span class="sxs-lookup"><span data-stu-id="3b720-109">Create and manage new SQL servers, and work with databases on them.</span></span> |
+| [<span data-ttu-id="ddf0a-108">sql/sql</span><span class="sxs-lookup"><span data-stu-id="ddf0a-108">sql/sql</span></span>](https://github.com/Azure-Samples/azure-sdk-for-go-samples/blob/master/sql/sql.go) | <span data-ttu-id="ddf0a-109">Créer et gérer de nouveaux serveurs SQL et travailler avec des bases de données sur ces derniers.</span><span class="sxs-lookup"><span data-stu-id="ddf0a-109">Create and manage new SQL servers, and work with databases on them.</span></span> |
